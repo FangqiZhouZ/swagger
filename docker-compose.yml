@@ -1,0 +1,27 @@
+services:
+  # 这里已经改成了 authentication
+  authentication:
+    build: ./authentication
+    container_name: authentication-service
+    environment:
+      # 重点：这里的 'db' 对应下方数据库服务的名称
+      # 这里的 'swagger' 对应下方 POSTGRES_DB 的名称
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/swagger
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    security_opt:
+      - seccomp:unconfined
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      - POSTGRES_DB=swagger
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
