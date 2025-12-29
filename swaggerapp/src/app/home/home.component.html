@@ -1,0 +1,149 @@
+<div class="container mt-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-breadcrumb mb-3">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <span class="form-inline my-2 my-lg-0">
+          <button (click)="logOut()" class="btn btn-outline-info my-2 my-sm-0" type="submit">Log out</button>
+        </span>
+      </div>
+    </nav>
+  
+        <div class="row gutters-sm">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1">
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Profile
+                  </a>
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Security
+                  </a>
+                  <a href="#account" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings mr-2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings
+                  </a>
+                </nav>
+              </div>
+            </div>
+            <div class="map-wrapper">
+              <div id="map"></div>
+          </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                  <li class="nav-item">
+                    <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="card-body tab-content">
+                <div class="tab-pane active" id="profile">
+                  <h6>PROFILE</h6>
+                  <hr>
+                  <form #userForm="ngForm" (ngSubmit)="onUpdateUser()">
+                    <div class="form-group">
+                      <label for="firstName">First Name</label>
+                      <input type="text" name="firstName" [(ngModel)]="user.firstName" required class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" name="lastName" [(ngModel)]="user.lastName" required class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="url">Username</label>
+                      <input type="text" name="username" [(ngModel)]="user.username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                      <label for="url">Email</label>
+                      <input type="text" name="email" [(ngModel)]="user.email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="url">Company URL</label>
+                      <input type="text" name="companyUrl" class="form-control" placeholder="Company URL" value="https://getarrays.tech/" disabled>
+                    </div>
+                    <div class="form-group small text-muted">
+                      Location is determined by using your browser Geolocation.
+                    </div>
+                    <button [disabled]="userForm.invalid || showLoading" type="submit" class="btn btn-primary">
+                      <span *ngIf="showLoading">Loading...</span>
+                    <span *ngIf="!showLoading">Update</span>
+                    </button>
+                  </form>
+                </div>
+  
+                <div class="tab-pane" id="security">
+                  <h6>SECURITY</h6>
+                  <hr>
+                    <div class="form-group mb-0">
+                      <label class="d-block">JWT (Json Web Token)</label>
+                      <p class="font-size-sm text-secondary">Last Logon: {{user?.logInDateDisplay | date:'medium'}}</p>
+                      <ul class="list-group list-group-sm">
+                        <li class="list-group-item has-icon">
+                          <div class="mb-3">
+                            <h6 class="mb-2">Expiration: {{ tokenExpirationDate | date:'medium' }}</h6>
+                              <button (click)="setButtonText()" class="btn btn-sm btn-warning mb-1" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                {{ buttonText }}
+                              </button>
+                            <div class="collapse mt-2" id="collapseExample" >
+                              <div (click)="copyTokenToClipboard()" id="token-container" class="card card-body">
+                                Bearer {{token}}
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  <hr>
+                  <div class="form-group">
+                    <label class="d-block">Two Factor Authentication (Currently Unavailable)</label>
+                    <button disabled class="btn btn-info" type="button">Enable two-factor authentication</button>
+                    <p class="small text-muted mt-2">Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.</p>
+                  </div>
+                </div>
+  
+                <div class="tab-pane" id="account">
+                  <h6>SETTINGS</h6>
+                    <hr>
+                    <div class="form-group">
+                      <label class="d-block text-danger">Delete Account</label>
+                      <p class="text-muted font-size-sm">Once you delete your account, there is no going back. Please be certain.</p>
+                    </div>
+                    <button (click)="onDeleteUser(user?.username)" class="btn btn-danger" type="button">Delete Account</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  <!-- Button trigger modal -->
+  <button hidden="true" type="button" id="clipboard-modal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>
+  
+  <!-- Text Copy Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="width:230px;">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h6>Token copied!! <button type="button" class="btn btn-primary btn-sm ml-5" data-dismiss="modal">Ok</button>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

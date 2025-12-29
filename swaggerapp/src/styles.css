@@ -1,0 +1,20 @@
+@import 'http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css';
+@import "~leaflet/dist/leaflet.css";
+
+.map-wrapper {
+    position: absolute;
+    min-height: 200px;
+    min-width: 340px;
+  }
+  
+  #map {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    height: 100%;
+  }
+  
