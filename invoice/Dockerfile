@@ -19,8 +19,8 @@ FROM eclipse-temurin:17-jre-focal
 WORKDIR /app
 
 # 确认 jar 文件名是否正确
-COPY --from=build /app/target/authentication-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/invoice-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 8080
+EXPOSE 8081
 
 ENTRYPOINT ["java", "-Xmx1G", "-XX:+UseG1GC", "-jar", "app.jar"]
