@@ -124,8 +124,4 @@ public class ExceptionHandling implements ErrorController {
 		return createHttpResponse(NOT_FOUND, "This page doesn't exist");
 	}
 
-	@Override
-	public String getErrorPath() {
-		return ERROR_PATH;
-	}
 }

@@ -1,0 +1,47 @@
+services:
+  # 1. 验证后端
+  authentication:
+    build: ./authentication
+    container_name: authentication-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/swagger
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  # 2. 发票后端
+  invoice:
+    build: ./invoice
+    container_name: invoice-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/swagger
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+
+  # 3. 前端界面 (新增)
+  frontend:
+    build: ./swaggerapp
+    container_name: angular-frontend
+    ports:
+      - "4200:80"  # 你访问电脑的 4200，它会转到容器里的 Nginx (80)
+    depends_on:
+      - authentication
+      - invoice
+
+  # 4. 数据库
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      - POSTGRES_DB=swagger
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"

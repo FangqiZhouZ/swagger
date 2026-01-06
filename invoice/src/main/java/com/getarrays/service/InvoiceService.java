@@ -1,11 +1,9 @@
 package com.getarrays.service;
-
 import com.getarrays.entity.Invoice;
 import com.getarrays.exception.InvoiceNotFoundException;
 import com.getarrays.repository.InvoiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.Collection;
 
