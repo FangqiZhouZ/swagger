@@ -1,0 +1,2 @@
+CREATE DATABASE swagger;
+GRANT ALL PRIVILEGES ON DATABASE swagger TO postgres;
